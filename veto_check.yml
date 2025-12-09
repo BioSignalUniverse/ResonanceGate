@@ -1,0 +1,45 @@
+# File: .github/workflows/veto_check.yml
+
+name: ResonanceGate - Veto Mandate Integrity Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  goa_test_suite:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install numpy websockets
+
+      - name: Run ITP (Goa Test Suite) 🚀
+        id: run_tests
+        # The script must be executable in the root directory
+        run: python integration_testing_protocol.py
+        
+      - name: Check Certification Status
+        if: steps.run_tests.outcome != 'success'
+        run: |
+          echo "❌ ITP FAILURE: Code does not meet Structural Honesty requirements. The Veto Mandate has been compromised."
+          exit 1
+        
+      - name: Check Latency Requirement
+        run: |
+          # Ensure integration_testing_protocol.py generates this report file
+          LATENCY_MS=$(grep 'Maximum Latency:' RESONANCEGATE_CERTIFICATION.md | awk '{print $NF}' | sed 's/ms//')
+          MAX_ACCEPTABLE=100
+          if [ $(echo "$LATENCY_MS > $MAX_ACCEPTABLE" | bc -l) -eq 1 ]; then
+            echo "❌ LATENCY FAILURE: Max latency of $LATENCY_MS ms exceeds the 100ms requirement."
+            exit 1
+          fi
