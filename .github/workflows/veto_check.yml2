@@ -1,0 +1,18 @@
+name: Veto_Check_RUN
+
+on:
+  pull_request:
+    branches: [ TheSplendis ]
+  workflow_dispatch:
+
+jobs:
+  goa_test_suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Run Integration Test
+        run: python ./integration_testing_protocol.py
