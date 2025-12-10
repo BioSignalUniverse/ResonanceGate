@@ -1,4 +1,4 @@
-name: ResonanceGate - Veto Mandate Integrity Check
+name: ResonanceGate - Veto Mandate Integrity Check  
 
 # Triggers the workflow on Pull Requests targeting the 'main' branch
 on:
