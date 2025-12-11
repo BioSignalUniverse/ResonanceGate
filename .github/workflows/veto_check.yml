@@ -1,5 +1,5 @@
-name: Veto_Check_FINAL
-on: [push] # Run on ANY push to ANY branch. This guarantees execution.
+name: Veto_Check_PUBLISHED
+on: [push] # Run on ANY push for definitive confirmation
 
 jobs:
   goa_test_suite:
