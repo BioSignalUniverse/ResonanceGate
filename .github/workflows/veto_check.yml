@@ -1,7 +1,6 @@
-name: Veto_Check_RUN
-on: 
-  pull_request: 
-    branches: [ TheSplendis, main ]
+name: Veto_Check_FINAL
+on: [push] # Run on ANY push to ANY branch. This guarantees execution.
+
 jobs:
   goa_test_suite:
     runs-on: ubuntu-latest
