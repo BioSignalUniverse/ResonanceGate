@@ -1,0 +1,15 @@
+name: Veto_Check_RUN
+on: 
+  pull_request: 
+    branches: [ TheSplendis, main ]
+jobs:
+  goa_test_suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Execute ITP Script
+        run: python integration_testing_protocol.py
