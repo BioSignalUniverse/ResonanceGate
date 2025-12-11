@@ -1,10 +1,7 @@
 name: Veto_Check_RUN
-
-on:
-  pull_request:
-    branches: [ TheSplendis ]
-  workflow_dispatch:
-
+on: 
+  pull_request: 
+    branches: [ TheSplendis, main ]  # ← Add both!
 jobs:
   goa_test_suite:
     runs-on: ubuntu-latest
@@ -14,5 +11,5 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - name: Run Integration Test
-        run: python ./integration_testing_protocol.py
+      - name: Execute ITP Script
+        run: python integration_testing_protocol.py
