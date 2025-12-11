@@ -1,15 +1,18 @@
 name: Veto_Check_PUBLISHED
-on: [push] 
+
+# This was the only real problem: on: [push] is invalid syntax
+on: push   # ← fixed
 
 jobs:
   goa_test_suite:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+
       - name: Execute ITP Script
         run: python integration_testing_protocol.py
-    ```
