@@ -1,5 +1,5 @@
 name: Veto_Check_PUBLISHED
-on: [push] # Run on ANY push for definitive confirmation
+on: [push] 
 
 jobs:
   goa_test_suite:
@@ -12,3 +12,4 @@ jobs:
           python-version: '3.x'
       - name: Execute ITP Script
         run: python integration_testing_protocol.py
+    ```
