@@ -1,7 +1,7 @@
 name: Veto_Check_RUN
 on: 
   pull_request: 
-    branches: [ TheSplendis ]
+    branches: [ TheSplendis, main ]  # ← Add both!
 jobs:
   goa_test_suite:
     runs-on: ubuntu-latest
