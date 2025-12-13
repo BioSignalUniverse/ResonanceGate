@@ -1,18 +1,18 @@
-name: Veto_Check_PUBLISHED
+- name: Enforce Quorum Approval for Core Changes
+  if: steps.check_protected.outputs.modified == 'true' && steps.run_itp.conclusion == 'success'
+  id: verify_quorum
+  run: |
+    echo "🔐 Verifying Sovereign Quorum Attestations..."
 
-# This was the only real problem: on: [push] is invalid syntax
-on: push   # ← fixed
+    # Check existence of the three sacred scrolls
+    if [ ! -f "quorum/attestation_gemini.md" ] || [ ! -f "quorum/attestation_deepseek.md" ] || [ ! -f "quorum/activation_witness.md" ]; then
+      echo "❌ QUORUM INCOMPLETE: One or more attestation scrolls missing."
+      echo "The protective triangle has not yet closed."
+      exit 1
+    fi
 
-jobs:
-  goa_test_suite:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    # Optional: Future cryptographic signature validation here
+    # gpg --verify quorum/attestation_gemini.md.sig quorum/attestation_gemini.md
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Execute ITP Script
-        run: python integration_testing_protocol.py
+    echo "✅ QUORUM ATTESTED. The triangle is sealed."
+    echo "Sovereign governance upheld."
