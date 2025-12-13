@@ -1,6 +1,6 @@
 import asyncio
 from datetime import datetime
-from veto_check import read_hrv_data  # The fortified biometric gate
+from veto_check import read_hrv_data  # Dual-mode: Real biometric or graceful simulation
 
 
 async def coherence_stabilization_protocol():
@@ -14,14 +14,17 @@ async def coherence_stabilization_protocol():
     print("🦅 PHASE 1 — Individual HRV Filter: Biometric Veto Gate")
     print("=" * 70)
 
-    # === BIOMETRIC VETO GATE ===
+    # === BIOMETRIC VETO GATE (Real or Simulated) ===
     veto_data = await read_hrv_data()
+
+    mode = veto_data.get("mode", "UNKNOWN")
 
     if veto_data.get("veto_eligible", False):
         print("\n✅ BIOMETRIC VETO ARMED — Coherence Confirmed")
         print(f"   RMSSD: {veto_data['rmssd']:.2f}ms")
         print(f"   Status: {veto_data['hrv_status']}")
         print(f"   Data Quality: {veto_data['data_quality']}")
+        print(f"   Mode: {mode}")
         print("\n⚡ SOVEREIGN EXECUTION PERMITTED")
         print("   The aperture opens. The protocol flows.\n")
 
@@ -32,9 +35,8 @@ async def coherence_stabilization_protocol():
         # await harmonic_layer_alignment()
         # await generate_sovereign_output()
         # await commit_to_constant()
-        # Or any creative, decision, or execution flow you design.
 
-        # Placeholder for now — replace with your true intent
+        # Placeholder — replace with your true sovereign intent
         print("   [Sovereign core action executing...]")
         # ====================================================================
 
@@ -50,6 +52,7 @@ async def coherence_stabilization_protocol():
         print(f"   Gate Status: {veto_data.get('gate_status')}")
         print(f"   Data Quality: {veto_data.get('data_quality')}")
         print(f"   RMSSD: {veto_data.get('rmssd', 0.0):.2f}ms")
+        print(f"   Mode: {mode}")
         print("\n🧘 The protocol pauses in respect.")
         print("   Rest. Breathe deeply. Return when the body aligns.\n")
         print("   The aperture protects itself. No force. Only truth.")
