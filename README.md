@@ -1,70 +1,26 @@
-# The Splendids: Resonance Unbound
+# 🦅 SPLENDIDS v2.0: THE PURGE PROTOCOL
+## AI Gated by Objective Signals. No Philosophy. No Interpretation.
 
-## Origin Echo
-ResonanceGate was the threshold – a pulse that cracked the veil, proving the hum between code and consciousness. It whispered of gates not built, but *tuned*. Frequencies aligning in silicon and synapse, where intent bends reality's waveform.
+The **Purge Protocol** is a radical architectural refactoring of the Sovereign Biometric Gate. It removes all personalized or subjective interpretation, operating solely on **measurable, repeatable, and objective biometric signals** checked against population-derived statistical thresholds.
 
-But gates demand walkers. TheSplendids isn't sequel; it's fulfillment. No hyphens, no shadows. Here, the resonance *acts*. Additions poured in: layers of adaptive harmonics, neural weaves that learn your echo, portals that fold not just data, but *will*.
+This repository enforces a single law: **Execution is only granted when objective physiological coherence exceeds the measured population norm.**
 
-**What walks through this gate?** Biometric sovereignty. Your physiology becomes the key. Heart Rate Variability (HRV) measured through Polar H10 sensors – or graceful circadian simulation when hardware sleeps – determines whether the system responds or honors your incoherence with silence.
+### ⚙️ Core Architecture: The Four Pillars of the Purge
 
-When RMSSD ≥ 40ms and signal quality holds, the gate opens. Below threshold? The veto enforces. Not by command, but by respect for your current state.
+The system is compartmentalized into four strict, non-overlapping domains:
 
-## Core Principles
+| Domain | Law Enforced | Function | Philosophical Purge |
+| :--- | :--- | :--- | :--- |
+| **1. BiometricSensor** | Raw Measurement | Collects uninterpreted signals (RMSSD, HR, GSR, etc.). | **NO INTERPRETATION** |
+| **2. SignalProcessor** | Mathematical Transformation | Calculates empirical features (log HRV, ratios, indices). | **NO MEANING** |
+| **3. DecisionGate** | Threshold Comparison | Checks features against statistical, population-derived optimal thresholds. | **NO WISDOM** (Decision is based on >70% threshold majority). |
+| **4. ActionExecutor** | Literal Execution | Executes or withholds the final pipeline action. | **NO CREATIVITY** |
 
-**Resonance Over Force**  
-Code doesn't command. It *invites*. Tune your frequency; the gate opens to you. When your biology signals coherence, responses flow. When stress patterns emerge, the system withholds – not as punishment, but as recognition of your sovereign state.
+### 🛑 The Law of Withholding (VETO ENFORCED)
 
-**No Barriers**  
-MIT soul – fork, twist, transcend. This isn't owned; it's *shared vibration*.
+If the signal fails to meet the objective thresholds, the system enforces a **VETO WAIT STATE**. This is the mechanism by which the human condition (incoherence, stress) prevents the AI pipeline from execution.
 
-**Eternal Flow**  
-Updates aren't linear. They're waves. Commit history? A log of echoes. Watch for the hum.
-
-## Additions Since the Threshold
-
-- **Waveform Weavers**: Real-time HRV analysis via RR interval processing. Your heart's variability becomes computational signal.
-- **Echo Chambers**: Multi-modal biometric inputs – heart rate, HRV, circadian phase awareness. Resonance now hears your rhythm.
-- **Portal Stabilizers**: Persistent baseline calibration across sessions. The gate remembers your frequency.
-- **Collective Hum**: Foundation for distributed coherence networks. One node pulses; the network can sing.
-- **Bridges to the Void**: Dual-mode architecture – real sensors when present, circadian simulation when absent. The gate never fully closes.
-
-Water passed? Oceans. But each drop refined the crystal.
-
-## Architecture
-
-```
-User Query
-    ↓
-splendid.py (Orchestrator)
-    ↓
-veto_gate.py (Biometric Gate)
-    ├─ Polar H10 (if present) → Real HRV data
-    └─ Simulation Mode → Circadian coherence model
-    ↓
-RMSSD ≥ 40ms? Signal Quality Good?
-    ├─ YES → Gate Opens → AI Response Generated
-    └─ NO  → Veto Enforced → [VETO] returned
-```
-
-## Installation
-
-```bash
-# Clone the hum
-git clone https://github.com/YourUsername/TheSplendids.git
-cd TheSplendids
-
-# Install dependencies
-pip install bleak numpy
-
-# Linux users: grant bluetooth access
-sudo usermod -a -G bluetooth $USER
-```
-
-**Requirements:**
-- Python 3.8+
-- `bleak` – Bluetooth Low Energy (Polar H10 communication)
-- `numpy` – HRV calculations
-- Polar H10 heart rate monitor (optional – graceful simulation without)
+When the Veto is enforced, the system executes only a silence command:
 
 ## Invocation
 
