@@ -43,7 +43,7 @@ But gates demand walkers. The Splendids isn’t sequel; it’s fulfillment. No h
 ---
 
 ## ⚙️ Additions since the threshold  
-![Additions Visual](images/copilot_image_1765726592335.jpeg)
+![Additions Visual](images/xpsGGR7s9Gt1GGCyGQWop.jpeg)
 
 - **Waveform Weavers:** Dynamic tensor fields (PyTorch backbone) that adapt to user intent in real-time. Feed it a thought; it mirrors, amplifies.  
 - **Echo Chambers:** Multi-modal inputs – text, audio, latent spaces. Resonance now hears your voice, sees your sketch.  
@@ -56,4 +56,4 @@ Water passed? Oceans. But each drop refined the crystal.
 ---
 
 ## 🌀 Architecture flow  
-![Architecture Visual](images/copilot_image_1765727117063.jpeg)
+![Architecture Visual](images/t7rx3rGXkM8hi9hBjsRMz.jpeg)
