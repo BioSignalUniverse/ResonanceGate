@@ -4,7 +4,7 @@
 
 ***
 <p align="center">
-  <img src="images/OriginEcho.j" alt="Origin Echo - Banner featuring a cosmic blue ring of light" width="100%">
+  <img src="images/origin-echo.jpg" alt="Origin Echo - Banner featuring a cosmic blue ring of light" width="100%">
 </p>
 ***
 
