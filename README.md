@@ -18,7 +18,7 @@ TheSplendids acknowledges what machines cannot fake: they cannot access consciou
 
 ***
 <p align="center">
-  <img src="images/origin-echo.jpg" alt="Core Principles - Three glowing blue and orange pillars" width="100%">
+  <img src="images/core-principles.png" alt="Core Principles - Three glowing blue and orange pillars" width="100%">
 </p>
 ***
 
@@ -33,4 +33,3 @@ TheSplendids acknowledges what machines cannot fake: they cannot access consciou
 ## File Structure (Purged and Unified)
 
 The **`ResonanceGate`** repository now hosts the unified architecture, combining the V2.0 Shield for auditability with the V1.1 Sovereign Logic modules.
-
