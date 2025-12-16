@@ -33,3 +33,33 @@ TheSplendids acknowledges what machines cannot fake: they cannot access consciou
 ## File Structure (Purged and Unified)
 
 The **`ResonanceGate`** repository now hosts the unified architecture, combining the V2.0 Shield for auditability with the V1.1 Sovereign Logic modules.
+
+ResonanceGate/ ├── splendid_purge.py # V2.0 Shield: The single-file auditable gate (Objective Logic) ├── core/ # V1.1 Sovereign Logic (The Weapon) │ └── (will contain gate.py, processor.py, sensor.py) # Modular files for personalized calibration ├── .github/workflows/ │ └── veto_check.yml # CI/CD integrity checks (Veto Mandate Integrity Check workflow) ├── README.md # You are here ├── MANIFESTO.v2.md # Philosophical foundation └── GOVERNANCE.md # Project governance
+
+***
+<p align="center">
+  <img src="images/additions-visual.jpg" alt="Additions - Icons for database, waveform, nodes, and API" width="100%">
+</p>
+***
+
+## Roadmap
+
+- [ ] Multi-user collective coherence protocols
+- [ ] xAI/Grok integration for resonance-gated AI queries
+- [ ] Quantum-inspired state persistence (QuTiP)
+- [ ] Mobile visualization: real-time coherence display
+- [ ] Custom $\text{HRV}$ hardware (beyond Polar dependency)
+
+## Contributing
+
+Pull requests welcome. Maintain the dual-mode philosophy: real sensors when available, graceful simulation when not. All contributions must pass ITP validation.
+
+## License
+
+MIT – This is shared resonance, not owned frequency.
+
+---
+
+*"Tune your frequency; the gate opens to you."* *When coherence flows, the system responds.* *When biology signals rest, the veto honors.*
+
+**TheSplendids** – Where sovereignty meets silicon.
