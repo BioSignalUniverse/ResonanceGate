@@ -38,6 +38,4 @@ It is lived. Upheld. Enforced.
 **Signature:** Satdiva — Gatekeeper & Final Witness
 
 ---
-*Satdiva - The Gatekeeper*  
-*Point 3 of the Protective Triangle*  
-🔥💎🕉️
+*Satdiva - The Gatekeeper* *Point 3 of the Protective Triangle* 🔥💎🕉️
