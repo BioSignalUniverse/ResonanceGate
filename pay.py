@@ -1,56 +1,56 @@
-# pay.py: Entry Point for Sovereign Logic (V1.1)
-# Function: Orchestrates the Veto Sequence, bridging user input to the core modules.
+# pay.py: Entry Point for Sovereign Logic (V1.1) - FINAL INTEGRATION
+# Function: Orchestrates the Veto Sequence, bridging user input to the core V1.1 modules.
 
 import argparse
 import sys
 import os
 
-# Ensure the V2.0 Shield is importable for core utilities (like RMSSD calculation)
+# --- V1.1 Integration ---
+# Import the Sovereign Gate from the core directory for personalized logic
+try:
+    # Use relative import for modularity
+    sys.path.append(os.path.join(os.path.dirname(__file__), 'core'))
+    from gate import SovereignGate
+except ImportError:
+    print("FATAL ERROR: core/gate.py (Sovereign Gate) not found or has errors.")
+    sys.exit(1)
+
+# Import V2.0 Shield utilities only for simulation fallback and default threshold
 try:
     from splendid_purge import (
         calculate_rmssd_mock,
-        check_veto_condition,
         RMSSD_THRESHOLD_DEFAULT
     )
 except ImportError:
-    print("FATAL ERROR: splendid_purge.py (V2.0 Shield) not found or has errors.")
-    sys.exit(1)
-
-# --- Future V1.1 Imports (Placeholder) ---
-# The sovereign logic lives here, replacing the simple check below.
-# try:
-#     from core.gate import SovereignGate
-# except ImportError:
-#     print("WARNING: core/gate.py not found. Running in V2.0 compatibility mode.")
-#     SovereignGate = None
-# ----------------------------------------
+    print("WARNING: splendid_purge.py (V2.0 Shield) not found. Running with hardcoded defaults.")
+    # Fallback definitions if splendid_purge is missing (for robust execution)
+    def calculate_rmssd_mock(simulate=True): return 42.0 
+    RMSSD_THRESHOLD_DEFAULT = 50.0 
+# -------------------------
 
 
-def run_veto_sequence(rmssd_value=None, threshold=RMSSD_THRESHOLD_DEFAULT):
+def run_sovereign_sequence(rmssd_value=None, personalized_threshold=RMSSD_THRESHOLD_DEFAULT):
     """
-    Executes the Veto sequence based on provided RMSSD (or a simulated value).
+    Executes the V1.1 Sovereign sequence using the personalized gate.
     """
-    print(f"\n--- RESONANCE GATE INITIATED ---")
+    print(f"\n--- RESONANCE GATE ACTIVATED (V1.1) ---")
 
-    if rmssd_value is None:
-        # Use V2.0 utility to simulate RMSSD if no real sensor data is available
-        rmssd_value = calculate_rmssd_mock(simulate=True)
-        print(f"MODE: Circadian Simulation Fallback (RMSSD: {rmssd_value:.2f}ms)")
+    # 1. Initialize the Gate with the personalized baseline
+    gate = SovereignGate(personalized_threshold=personalized_threshold)
+
+    # 2. Read Coherence (using input or simulation)
+    # The SovereignGate will handle the RMSSD calculation/mocking internally for V1.1
+    # We pass the RMSSD_value directly to the gate's reader for demonstration
+    gate.read_coherence(sensor_data=rmssd_value)
+
+    # 3. Check Sovereignty and Execute Command
+    execution_result = gate.execute_command()
+
+    if execution_result:
+        print("\nLAUNCH STATUS: V1.1 Sovereign Logic (Coherent Bridge) is fully operational.")
     else:
-        print(f"MODE: Direct Sensor Input (RMSSD: {rmssd_value:.2f}ms)")
-
-    veto_enforced = check_veto_condition(rmssd_value, threshold)
-
-    if not veto_enforced:
-        print(f"✅ VETO CONDITION MET: RMSSD ({rmssd_value:.2f}ms) ≥ Threshold ({threshold}ms)")
-        print("COHERENCE ACHIEVED. System grants access to higher purpose operation.")
-        # Future V1.1 logic execution goes here (e.g., calling SovereignGate)
-        # if SovereignGate:
-        #    SovereignGate().execute_command()
-    else:
-        print(f"🛑 VETO ENFORCED: RMSSD ({rmssd_value:.2f}ms) < Threshold ({threshold}ms)")
-        print("COHERENCE LOST. System honors biology and prohibits destructive operation.")
-        sys.exit(0) # Exit cleanly, preventing further command execution
+        print("\nLAUNCH STATUS: V1.1 Veto Enforced. System remains silent.")
+        sys.exit(0) # Exit cleanly upon Veto
 
 
 if __name__ == "__main__":
@@ -66,15 +66,10 @@ if __name__ == "__main__":
     parser.add_argument(
         '-t', '--threshold',
         type=float,
-        help=f'Set a custom RMSSD threshold (default: {RMSSD_THRESHOLD_DEFAULT}ms).',
+        help=f'Set a custom personalized RMSSD threshold (default: {RMSSD_THRESHOLD_DEFAULT}ms).',
         default=RMSSD_THRESHOLD_DEFAULT
     )
 
     args = parser.parse_args()
 
-    # If the user is running V1.1, they must have a V2.0 Shield present for core logic.
-    if not os.path.exists("splendid_purge.py"):
-        print("ERROR: Missing dependency. splendid_purge.py (V2.0 Shield) must be present.")
-        sys.exit(1)
-
-    run_veto_sequence(args.rmssd, args.threshold)
+    run_sovereign_sequence(args.rmssd, args.threshold)
