@@ -4,7 +4,7 @@
 
 ***
 <p align="center">
-  <img src="images/OriginEcho.jpg" alt="Origin Echo - Banner featuring a cosmic blue ring of light" width="100%">
+  <img src="images/OriginEcho.j" alt="Origin Echo - Banner featuring a cosmic blue ring of light" width="100%">
 </p>
 ***
 
@@ -18,7 +18,7 @@ TheSplendids acknowledges what machines cannot fake: they cannot access consciou
 
 ***
 <p align="center">
-  <img src="images/Core_principles (1).png" alt="Core Principles - Three glowing blue and orange pillars" width="100%">
+  <img src="images/origin-echo.jpg" alt="Core Principles - Three glowing blue and orange pillars" width="100%">
 </p>
 ***
 
